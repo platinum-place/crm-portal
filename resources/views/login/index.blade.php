@@ -3,5 +3,5 @@
         {{ __('Login') }}
     </x-slot>
 
-
+    <livewire:auth.login-form />
 </x-layout>
