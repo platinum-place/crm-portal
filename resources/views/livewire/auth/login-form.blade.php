@@ -9,7 +9,7 @@
                 <div class="card-body">
                     <form wire:submit.prevent="submit">
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="inputEmail" type="email" wire:model="username"/>
+                            <input class="form-control" id="inputEmail" type="text" wire:model="username"/>
                             <label for="inputEmail">{{ __('Username') }}</label>
                             @error('username') <span class="text-danger">{{ $message }}</span> @enderror
                         </div>
