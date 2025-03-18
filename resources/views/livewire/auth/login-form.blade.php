@@ -3,7 +3,7 @@
         <div class="col-lg-5">
             <div class="card shadow-lg border-0 rounded-lg mt-5">
                 <div class="card-header d-flex justify-content-center">
-                    <img src="{{ asset('img/logo.png') }}" alt="Logo" width="200" height="200">
+{{--                    <img src="{{ asset('img/logo.png') }}" alt="Logo" width="200" height="200">--}}
                 </div>
 
                 <div class="card-body">

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Auth;
 
+use App\Clients\ZohoClient;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Validation\ValidationException;
@@ -26,9 +27,11 @@ class LoginForm extends Component
         ];
     }
 
-    public function submit(): \Illuminate\Http\RedirectResponse
+    public function submit(ZohoClient $client): \Illuminate\Http\RedirectResponse
     {
         $this->validate();
+
+        dd($client->createToken());
 
         $this->withValidator(function (Validator $validator) {
             $validator->after(function ($validator) {
