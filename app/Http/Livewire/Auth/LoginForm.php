@@ -2,6 +2,10 @@
 
 namespace App\Http\Livewire\Auth;
 
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\ValidationException;
+use Illuminate\Validation\Validator;
 use Livewire\Component;
 
 class LoginForm extends Component
@@ -22,11 +26,19 @@ class LoginForm extends Component
         ];
     }
 
-    public function submit()
+    public function submit(): \Illuminate\Http\RedirectResponse
     {
         $this->validate();
 
-        // Execution doesn't reach here if validation fails.
+        $this->withValidator(function (Validator $validator) {
+            $validator->after(function ($validator) {
+                if (!Auth::attempt(['username' => $this->username, 'password' => $this->password])) {
+                    $validator->errors()->add('username', __('auth.failed'));
+                }
+            });
+        })->validate();
+
+        return redirect()->route('home');
     }
 
     public function render()
