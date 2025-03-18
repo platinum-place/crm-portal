@@ -4,20 +4,17 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Líneas de Idioma para Restablecimiento de Contraseña
+    | Líneas de lenguaje de autenticación
     |--------------------------------------------------------------------------
     |
-    | Las siguientes líneas de idioma son las predeterminadas que coinciden
-    | con los motivos proporcionados por el gestor de contraseñas para un
-    | intento fallido de actualización de contraseña, como un token no válido
-    | o una nueva contraseña no válida.
+    | Las siguientes líneas de lenguaje se utilizan durante la autenticación
+    | para varios mensajes que necesitamos mostrar al usuario. Eres libre de
+    | modificar estas líneas según los requisitos de tu aplicación.
     |
     */
 
-    'reset' => '¡Tu contraseña ha sido restablecida!',
-    'sent' => '¡Hemos enviado por correo electrónico el enlace para restablecer tu contraseña!',
-    'throttled' => 'Por favor espera antes de intentarlo nuevamente.',
-    'token' => 'Este token de restablecimiento de contraseña no es válido.',
-    'user' => "No podemos encontrar un usuario con esa dirección de correo electrónico.",
+    'failed' => 'Estas credenciales no coinciden con nuestros registros.',
+    'password' => 'La contraseña proporcionada es incorrecta.',
+    'throttle' => 'Demasiados intentos de inicio de sesión. Por favor, inténtalo de nuevo en :seconds segundos.',
 
 ];
