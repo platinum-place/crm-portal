@@ -20,4 +20,8 @@ Route::middleware([\App\Http\Middleware\CheckSession::class])->group(function ()
     Route::get('/', function () {
         return view('welcome');
     });
+
+    Route::get('/home', function () {
+        return view('welcome');
+    })->name('home');
 });
